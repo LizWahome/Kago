@@ -14,22 +14,50 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          actions: [
-            IconButton(
-                onPressed: () async {
-                  await FirebaseAuth.instance.signOut();
-                  Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(builder: (context) => const LoginScreen()),
-                      (route) => false);
-                },
-                icon: const Icon(Icons.logout))
+      appBar: AppBar(
+        backgroundColor: Colors.amber,
+        actions: [
+          IconButton(
+              onPressed: () async {
+                await FirebaseAuth.instance.signOut();
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LoginScreen()),
+                    (route) => false);
+              },
+              icon: const Icon(Icons.logout))
+        ],
+      ),
+      body: Align(
+        alignment: Alignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+             RichText(
+                    text: const TextSpan(
+                        text: 'Ka',
+                        style: TextStyle(
+                            fontFamily: 'stereofunk',
+                            fontSize: 40,
+                            color: Colors.black),
+                        children: [
+                          TextSpan(
+                              text: 'go',
+                              style: TextStyle(
+                                color: Colors.amber,
+                                fontFamily: 'stereofunk',
+                                fontSize: 40,
+                              ))
+                        ]),
+                  ),
+                  Text(uid!)
           ],
         ),
-        body: Center(child: Text(uid!)));
+      )
+    );
   }
- 
+
   @override
   void initState() {
     super.initState();
