@@ -18,7 +18,7 @@ class _Page2State extends State<Page2> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(30.0),
         child: Column(
                 children: [
                   Align(
@@ -41,17 +41,71 @@ class _Page2State extends State<Page2> {
                           ]),
                     ),
                   ),
-                  20.height,
-                  CircleAvatar(
-                    backgroundColor: Color.fromARGB(255, 241, 204, 216),
-                    radius: 100,
-                    child: ClipOval(
-                      child: Lottie.network(Lottie2, fit: BoxFit.cover)
+                  50.height,
+                     Stack(
+                    clipBehavior: Clip.none,
+                    children: [
+                      CircleAvatar(
+                        radius: 105,
+                        backgroundColor: Colors.amber,
+                        child: CircleAvatar(
+                        backgroundColor: Color.fromARGB(255, 233, 209, 215),
+                        radius: 100,
+                        child: ClipOval(
+                          child: Lottie.asset("assets/50810-forklift-loading-truck.json", fit: BoxFit.cover)
+                          ),
+                        ),
                       ),
-                    ),
+                      Positioned(
+                        bottom: -41,
+                        left: 0,
+                        right: 0,
+                        //right: 10,
+                        child: Center(
+                          child: Container(
+                            width: 50,
+                            height: 50,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(40),
+                              boxShadow: const [BoxShadow(color: Colors.white, spreadRadius: 10),],
+                              image: const DecorationImage(image: AssetImage("assets/port-1845350_1920.jpg"),
+                              fit: BoxFit.cover),
+                            ),
+                          ),
+                        ),
+                      ),
+                       Positioned(
+                        top: -3,
+                        child: Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(40),
+                            boxShadow: const [BoxShadow(color: Colors.white, spreadRadius: 10),],
+                            image: const DecorationImage(image: AssetImage("assets/logistics-7711000_1920.jpg"),
+                            fit: BoxFit.cover),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        top: -3,
+                        right: 1,
+                        child: Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(40),
+                            boxShadow: const [BoxShadow(color: Colors.white, spreadRadius: 10),],
+                            image: const DecorationImage(image: AssetImage("assets/pallet-1665471_1280.jpg"),
+                            fit: BoxFit.cover),
+                          ),
+                        ),
+                      ),
+                    ]
+                  ),
                   //Lottie.asset("name"),
                 
-                  10.height,
+                  150.height,
                   const Text(
                     'Our transporters are thoroughly vetted',
                     style: TextStyle(
@@ -59,6 +113,7 @@ class _Page2State extends State<Page2> {
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
                     ),
+                     textAlign: TextAlign.center,
                   ),
                   
                 ],

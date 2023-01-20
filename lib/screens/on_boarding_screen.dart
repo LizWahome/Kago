@@ -26,13 +26,16 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          //crossAxisAlignment: CrossAxisAlignment.center,
+          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             SizedBox(
-              height: MediaQuery.of(context).size.height / 2,
+              height: 600,
+              //height: screenSize.size.height * 0.6,
               child: PageView(
                 controller: controller,
                 children: const [Page1(), Page2(), Page3()],
@@ -45,12 +48,15 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   spacing: 16,
                   dotColor: Colors.black26,
                   activeDotColor: Colors.amber),
-                  onDotClicked: (index) => controller.animateToPage(index, duration: const Duration(milliseconds: 500), curve: Curves.easeIn),
+              onDotClicked: (index) => controller.animateToPage(index,
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeIn),
             ),
-            10.height,
+            60.height,
             ElevatedButton(
               style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.black),
                   shadowColor: MaterialStateProperty.all<Color>(Colors.amber),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     const RoundedRectangleBorder(
@@ -64,7 +70,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               onPressed: () async {
                 final prefs = await SharedPreferences.getInstance();
                 prefs.setBool('showLogin', true);
-    
+
                 if (mounted) {
                   Navigator.pushReplacement(
                       context,
@@ -73,7 +79,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 }
               },
               child: const Padding(
-                padding: EdgeInsets.all(16.0),
+                padding: EdgeInsets.symmetric(horizontal: 35.0, vertical: 18),
                 child: Text(
                   'Continue',
                   style: TextStyle(
