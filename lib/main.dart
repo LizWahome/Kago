@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:phoneauthentication/auth/auth_state.dart';
-import 'package:phoneauthentication/screens/login_screen.dart';
 import 'package:phoneauthentication/screens/on_boarding_screen.dart';
-import 'package:phoneauthentication/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'firebase_options.dart';
@@ -39,7 +37,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => AuthState(),
-      child: MaterialApp(
+      child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         home: OnBoardingScreen(),
         //home: showLogin ? const LoginScreen() : const OnBoardingScreen(),

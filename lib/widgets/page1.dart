@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:lottie/lottie.dart';
 import 'package:nb_utils/nb_utils.dart';
 
@@ -28,7 +29,6 @@ class _Page1State extends State<Page1> with TickerProviderStateMixin {
   void dispose() {
     controller.dispose();
     super.dispose();
-    
   }
 
   @override
@@ -41,31 +41,74 @@ class _Page1State extends State<Page1> with TickerProviderStateMixin {
           children: [
             Align(
               alignment: Alignment.topCenter,
-              child: RichText(
-                text: const TextSpan(
-                    text: 'Ka',
-                    style: TextStyle(
-                        fontFamily: 'stereofunk',
-                        fontSize: 40,
-                        color: Colors.black),
-                    children: [
-                      TextSpan(
-                          text: 'go',
-                          style: TextStyle(
-                            color: Colors.amber,
-                            fontFamily: 'stereofunk',
-                            fontSize: 40,
-                          ))
+              child: Column(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Color(0xFF414046),
+                          //color: Color.fromRGBO(65, 64, 70, 1),
+                          //blurRadius: 3,
+                          //spreadRadius: 1,
+                          offset: Offset(3, 3)
+                        )
+                      ],
+                      color: const Color(0xFFFCEA09),
+                    ),
+                    height: 80,
+                    width: 140,
+                    
+                    child: Stack(
+                      clipBehavior: Clip.none, children: [
+                      Positioned(
+                          bottom: 3,
+                          right: 5,
+                          child: SvgPicture.asset(
+                            'assets/WhatsApp_Image_2023-01-30_at_09.07.09__1_-removebg-preview_adobe_express.svg', width: 20, height: 20),
+                            ),
+                      const Positioned(
+                          top: -5,
+                          left: 26,
+                          //right: 100,
+                          child: Text(
+                            "Kago",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                                fontFamily: 'GTWalsheim',
+                                color: Colors.black,
+                                fontSize: 44),
+                          )),
                     ]),
+                  ),
+                ],
               ),
+              // child: RichText(
+              //   text: const TextSpan(
+              //       text: 'Ka',
+              //       style: TextStyle(
+              //           fontFamily: 'stereofunk',
+              //           fontSize: 40,
+              //           color: Colors.black),
+              //       children: [
+              //         TextSpan(
+              //             text: 'go',
+              //             style: TextStyle(
+              //               color: Colors.amber,
+              //               fontFamily: 'stereofunk',
+              //               fontSize: 40,
+              //             ))
+              //       ]),
+              // ),
             ),
             50.height,
             Stack(clipBehavior: Clip.none, children: [
               CircleAvatar(
-                radius: 105,
-                backgroundColor: Colors.amber,
+                radius: 103,
+                backgroundColor: const Color(0xFFFCEA09),
                 child: CircleAvatar(
-                  backgroundColor: Color.fromARGB(255, 207, 226, 235),
+                  backgroundColor: const Color.fromARGB(255, 207, 226, 235),
                   radius: 100,
                   child: ClipOval(
                       child: Lottie.asset("assets/35070-car-loading.json",
@@ -73,23 +116,22 @@ class _Page1State extends State<Page1> with TickerProviderStateMixin {
                 ),
               ),
               Positioned(
-                bottom: -41,
-                left: 0,
-                right: 0,
-                //right: 10,
+                //bottom: -41,
+                // left: 0,
+                // right: 0,
+                bottom: -5,
+                right: 10,
                 child: Center(
                   child: Container(
-                     decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(40),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.grey,
-                        blurRadius: 7,
-                        spreadRadius: 5,
-                        offset: Offset(5, 5)
-                      )
-                    ]
-                  ),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(40),
+                        boxShadow: const [
+                          BoxShadow(
+                              color: Color(0xFF414046),
+                              blurRadius: 7,
+                              spreadRadius: 5,
+                              offset: Offset(5, 5))
+                        ]),
                     child: RotationTransition(
                       turns: animation,
                       child: Container(
@@ -110,32 +152,36 @@ class _Page1State extends State<Page1> with TickerProviderStateMixin {
                 ),
               ),
               Positioned(
-                top: -3,
-                child: Container(
-                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(40),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.grey,
-                        blurRadius: 7,
-                        spreadRadius: 5,
-                        offset: Offset(5, 5)
-                      )
-                    ]
-                  ),
-                  child: RotationTransition(
-                    turns: animation,
-                    child: Container(
-                      width: 50,
-                      height: 50,
-                      decoration: BoxDecoration(
+                //top: -3,
+                left: -40,
+                top: 0,
+                bottom: 0,
+                child: Center(
+                  child: Container(
+                    decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(40),
                         boxShadow: const [
-                          BoxShadow(color: Colors.white, spreadRadius: 10),
-                        ],
-                        image: const DecorationImage(
-                            image: AssetImage("assets/logistics-7711000_1920.jpg"),
-                            fit: BoxFit.cover),
+                          BoxShadow(
+                              color: Color(0xFF414046),
+                              blurRadius: 7,
+                              spreadRadius: 5,
+                              offset: Offset(5, 5))
+                        ]),
+                    child: RotationTransition(
+                      turns: animation,
+                      child: Container(
+                        width: 50,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(40),
+                          boxShadow: const [
+                            BoxShadow(color: Colors.white, spreadRadius: 10),
+                          ],
+                          image: const DecorationImage(
+                              image:
+                                  AssetImage("assets/logistics-7711000_1920.jpg"),
+                              fit: BoxFit.cover),
+                        ),
                       ),
                     ),
                   ),
@@ -146,16 +192,14 @@ class _Page1State extends State<Page1> with TickerProviderStateMixin {
                 right: 1,
                 child: Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(40),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.grey,
-                        blurRadius: 7,
-                        spreadRadius: 5,
-                        offset: Offset(5, 5)
-                      )
-                    ]
-                  ),
+                      borderRadius: BorderRadius.circular(40),
+                      boxShadow: const [
+                        BoxShadow(
+                            color: Color(0xFF414046),
+                            blurRadius: 7,
+                            spreadRadius: 5,
+                            offset: Offset(5, 5))
+                      ]),
                   child: RotationTransition(
                     turns: animation,
                     child: Container(
@@ -164,9 +208,7 @@ class _Page1State extends State<Page1> with TickerProviderStateMixin {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(40),
                         boxShadow: const [
-                          BoxShadow(
-                            color: Colors.white, 
-                          spreadRadius: 10),
+                          BoxShadow(color: Colors.white, spreadRadius: 10),
                         ],
                         image: const DecorationImage(
                             image: AssetImage("assets/pallet-1665471_1280.jpg"),

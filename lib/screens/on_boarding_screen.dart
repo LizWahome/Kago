@@ -46,7 +46,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               effect: const WormEffect(
                   spacing: 16,
                   dotColor: Colors.black26,
-                  activeDotColor: Colors.amber),
+                  activeDotColor: Color(0xFFFCEA09)),
               onDotClicked: (index) => controller.animateToPage(index,
                   duration: const Duration(milliseconds: 500),
                   curve: Curves.easeIn),
