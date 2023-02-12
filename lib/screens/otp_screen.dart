@@ -113,43 +113,6 @@ class _OtpScreenState extends State<OtpScreen> {
                                 onSubmitted: (value) async =>
                                     await controller.verifyOtp(value),
                               ),
-                              // Pinput(
-                              //   length: 6,
-                              //   defaultPinTheme: PinTheme(
-                              //       width: 60,
-                              //       height: 60,
-                              //       decoration: BoxDecoration(
-                              //           borderRadius: BorderRadius.circular(10),
-                              //           border: Border.all(
-                              //             color: Colors.black,
-                              //           )),
-                              //       textStyle: const TextStyle(
-                              //         fontSize: 20,
-                              //         fontFamily: 'GTWalsheim',
-                              //         fontWeight: FontWeight.bold,
-                              //       )),
-                              //   focusNode: _pinPutFocusNode,
-                              //   controller: _pinPutController,
-                              //   pinAnimationType: PinAnimationType.fade,
-                              //   onCompleted: (pin) async {
-                              //     try {
-                              //       await FirebaseAuth.instance
-                              //           .signInWithCredential(PhoneAuthProvider.credential(
-                              //               verificationId: _verificationCode!, smsCode: pin))
-                              //           .then((value) async {
-                              //         if (value.user != null) {
-                              //           Navigator.pushAndRemoveUntil(
-                              //               context,
-                              //               MaterialPageRoute(
-                              //                   builder: (context) => const HomeScreen()),
-                              //               (route) => false);
-                              //         }
-                              //       });
-                              //     } catch (e) {
-                              //       FocusScope.of(context).unfocus();
-                              //     }
-                              //   },
-                              // ),
                               const Spacer(
                                 flex: 3,
                               ),

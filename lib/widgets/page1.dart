@@ -220,7 +220,7 @@ class _Page1State extends State<Page1> with TickerProviderStateMixin {
               ),
             ]),
             //Lottie.asset("name"),
-
+    
             100.height,
             const Text(
               'Get your goods transported',
